@@ -1,0 +1,45 @@
+{
+  "_comment": "Build with `packer build virtualbox-ubuntu1804.json`",
+  "builders": [
+    {
+      "boot_command": [
+        "<tab> cmdline ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `kickstart` }}<enter>"
+      ],
+      "disk_size": "{{ user `disk_size` }}",
+      "guest_os_type": "{{ user `virtualbox_guest_os_type` }}",
+      "headless": "{{ user `headless` }}",
+      "http_directory": "http",
+      "iso_checksum": "{{ user `iso_checksum_type` }}:{{ user `iso_checksum` }}",
+      "iso_target_path": "{{ user `iso_home` }}/{{ user `iso_path` }}/{{ user `iso_dir` }}/{{ user `iso_name` }}",
+      "iso_urls": [
+        "{{ user `iso_home` }}/{{ user `iso_path` }}/{{ user `iso_dir` }}/{{ user `iso_name` }}",
+        "{{ user `iso_url` }}"
+      ],
+      "name": "virtualbox",
+      "output_directory": "image/virtualbox/{{ user `vm_name` }}",
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_timeout": "10000s",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "type": "virtualbox-iso",
+      "vm_name": "{{ user `vm_name` }}"
+    },
+    {
+      "boot_command": [
+        "<tab> cmdline ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `kickstart` }} ipv6.disable=1<enter>"
+      ],
+      "communicator": "ssh",
+      "disk_size": "{{ user `disk_size` }}",
+      "disk_type_id": "0",
+      "guest_os_type": "{{ user `vmware_guest_os_type` }}",
+      "headless": "{{ user `headless` }}",
+      "http_directory": "http",
+      "iso_checksum": "{{ user `iso_checksum_type` }}:{{ user `iso_checksum` }}",
+      "iso_target_path": "{{ user `iso_home` }}/{{ user `iso_path` }}/{{ user `iso_dir` }}/{{ user `iso_name` }}",
+      "iso_urls": [
+        "{{ user `iso_home` }}/{{ user `iso_path` }}/{{ user `iso_dir` }}/{{ user `iso_name` }}",
+        "{{ user `iso_url` }}"
+      ]
+    }
+  ]
+}
