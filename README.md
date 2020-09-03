@@ -1,13 +1,11 @@
 
 ## Ideology
 
-We would like to have one template per operation system. Motivation for this decision:
+We would like to have one template for TON DApps Server operation system. Motivation for this decision:
 
-
-
-*   decrease time for image maintainership (maintain one template is much easy and require less time then maintain one template per system type)
 *   provide ability to run DApps Server locally for development propose
 *   add possibility to run TON DApps Server in a bunch of clouds and providers
+*   decrease time for image maintainership (maintain one template is much easy and require less time then maintain one template per system type)
 
 This template should be suitable for all system types we are going to have and workload that will be handled by these systems.
 
@@ -56,7 +54,9 @@ Packer execution should be done in the packer project root directory.
 
 
 ```
-packer build -var 'build=5' -var-file variables.json -force -except virtualbox,upload-sg ubuntu.json
+packer build -var 'build=5' -var-file variables.json -force -except vmware ubuntu.json (for Virtualbox)
+
+packer build -var 'build=5' -var-file variables.json -force -except virtualbox ubuntu.json (for VMWare)
 ```
 
 
