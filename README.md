@@ -3,18 +3,17 @@
 
 We would like to have one template for TON DApps Server operation system. Motivation for this decision:
 
-*   provide ability to run DApps Server locally for development propose
+*   decrease time for image maintainership (maintain one template is much easy and require less time then maintain one template)
+*   provide ability to run DApps Server locally for development propose (on workstation)
 *   add possibility to run TON DApps Server in a bunch of clouds and providers
-*   decrease time for image maintainership (maintain one template is much easy and require less time then maintain one template per system type)
-
-This template should be suitable for all system types we are going to have and workload that will be handled by these systems.
-
+*   standartize upgrading and delivery of new version
+*   have pre-installed image in universal format (OVF or OVA)
 
 ## Running
 
 We propose to use [packer](https://www.packer.io/) tool to build Virtual Machine Templates that uses VirtualBox workstation / player and ovftool as underlying software.
 
-Using this workflow with lead you from regular ISO image to ready to use in any virtualization provider. (OVA file) e.q VMware/VirtualBox.
+Using this workflow with lead you from regular ISO image to ready to use in any virtualization provider. (OVF or OVA file) e.q VMware/VirtualBox.
 
 Here is a diagram that represents template build and deploy workflow:
 
