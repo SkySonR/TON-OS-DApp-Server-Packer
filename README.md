@@ -1,15 +1,13 @@
 
 ## Ideology
 
-We would like to have one template per operation system. Motivation for this decision:
+We would like to have one VM template for operation system. Motivation for this decision:
 
-
-
-*   decrease time for image maintainership (maintain one template is much easy and require less time then maintain one template per system type)
-*   provide ability to run DApps Server locally for development propose
+*   decrease time for image maintainership (maintain one template is much easy and require less time then maintain one template)
+*   provide ability to run DApps Server locally for development propose (on workstation)
 *   add possibility to run TON DApps Server in a bunch of clouds and providers
-
-This template should be suitable for all system types we are going to have and workload that will be handled by these systems.
+*   standartize upgrading and delivery of new version
+*   have pre-installed image in universal format (OVA)
 
 
 ## Running
