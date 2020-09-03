@@ -337,3 +337,6 @@ Template versions list
    </td>
   </tr>
 </table>
+
+#### TODO 
+Integrate TON OS DApps Server instllation by https://github.com/samostrovskyi/TON-OS-DApp-Server-deploy/
